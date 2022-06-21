@@ -36,5 +36,9 @@
   "module": "./es/index.js",
   "dependencies": {
     "axios": "^0.27.2"
-  }
+  },
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	}
 }
