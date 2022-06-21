@@ -1,0 +1,40 @@
+{
+  "name": "@lexmin0412/notifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:commonjs": "rimraf lib && tsc --target es5 --outDir lib --module commonjs --declaration",
+    "build:es": "rimraf es && tsc --target es6 --outDir es --module es6",
+    "build": "npm run build:commonjs && npm run build:es",
+    "ts": "ts-node src/",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexmin0412/notifier.git"
+  },
+  "keywords": [],
+  "author": "lexmin0412 <zhangle_media@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lexmin0412/notifier/issues"
+  },
+  "homepage": "https://github.com/lexmin0412/notifier#readme",
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "types": "./lib/index.d.ts",
+  "jsnext:main": "./es/index.js",
+  "module": "./es/index.js",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
