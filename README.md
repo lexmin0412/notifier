@@ -2,6 +2,12 @@
 
 a webhook notifier.
 
+## Install
+
+```bash
+pnpm install @lexmin0412/notifier
+```
+
 ## Usage
 
 ### sendQYWXRobotNotification
