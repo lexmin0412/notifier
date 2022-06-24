@@ -1,6 +1,7 @@
 import { QYWX_WEBHOOK_URL } from './constants/index'
 import axios from 'axios'
 import { NotificationTypeType } from './types/index'
+import { NoticeOption } from './types/qywx'
 import { NotificationTypes } from './constants'
 
 /**
@@ -25,15 +26,12 @@ export function sendNotificationByType(type: NotificationTypeType, options: any)
  */
 export function sendQYWXRobotNotification(options: {
 	key: string,
-	data: any
+	noticeConfig: NoticeOption
 }) {
 	const { key } = options
-	let { data } = options
-	if ( typeof data !== 'string' ) {
-		data = JSON.stringify(data)
-	}
+	let { noticeConfig } = options
 	const url = `${QYWX_WEBHOOK_URL}?key=${key}`
-	return axios.post(url, data, {
+	return axios.post(url, JSON.stringify(noticeConfig), {
 		headers: {
 			'Content-Type': 'application/json'
 		}
