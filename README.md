@@ -37,3 +37,7 @@ sendNotificationByType('QYWX_ROBOT', {
 	}
 })
 ```
+
+## Appreciation
+
+- [企业微信-开发者中心-群机器人配置说明](https://developer.work.weixin.qq.com/document/path/91770)
